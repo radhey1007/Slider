@@ -1,3 +1,7 @@
+import { ImagePicker } from '@ionic-native/image-picker';
+import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
+import { Camera } from '@ionic-native/camera';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -6,6 +10,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+
+
 
 @NgModule({
   declarations: [
@@ -24,7 +30,11 @@ import { HomePage } from '../pages/home/home';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    FileTransfer,
+    FileTransferObject,    
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Camera,
+    ImagePicker
   ]
 })
 export class AppModule {}
